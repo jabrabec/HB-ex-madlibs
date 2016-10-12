@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} Madlibs 2 {% endblock %}
+
+{% block content %} 
+    Balloonicorn is going on a {{ adjective }} adventure with {{ name }}, 
+    in her <span id="{{ color }}">{{ color }}</span> car. They found a 
+    {% if adject2 %}<ul>
+        {% for word in adject2[:-1] %}
+            <li>{{ word }},</li>
+        {% endfor %}
+        {% if adject2|length > 1 %}
+            and
+        {% endif %} 
+        <li>{{ adject2[-1] }}</li>
+    </ul>{% endif %}
+    {{ noun }}, and it totally blew their minds!
+
+{% endblock %}
