@@ -5,9 +5,13 @@
 {% block content %} 
     There once was a <span id="{{ color }}">{{ color }}</span> {{ noun }} sitting in the Hackbright Lab. When {{ name }} went to pick it up, it burst into
     {% if adject2 %}
-        {% for word in adject2 %}
+        {% for word in adject2[:-1] %}
             {{ word }}, 
         {% endfor %}
+        {% if adject2|length > 1 %}
+            and
+        {% endif %} 
+        {{ adject2[-1] }}
     {% endif %}
      flames in a totally {{ adjective }} way.
 {% endblock %}
