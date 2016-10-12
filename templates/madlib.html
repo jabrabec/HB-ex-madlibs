@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} Madlibs {% endblock %}
+
+{% block content %} 
+    There once was a <span id="{{ color }}">{{ color }}</span> {{ noun }} sitting in the Hackbright Lab. When {{ name }} went to pick it up, it burst into
+    {% if adject2 %}
+        {% for word in adject2 %}
+            {{ word }}, 
+        {% endfor %}
+    {% endif %}
+     flames in a totally {{ adjective }} way.
+{% endblock %}
